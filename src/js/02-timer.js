@@ -45,12 +45,12 @@ if (currentTime.getTime()<selectedDates[0].getTime()) {
  function startCounter() {
   
   secondsCounter+=1;
-  NumberOfMiliSeconds = selectedTime.getTime()-currentTime.getTime();
-  NumberOfSeconds = Math.floor(NumberOfMiliSeconds/1000)-secondsCounter;
-  NumberOfdays = Math.floor(NumberOfSeconds/86400);
-  NumberOfHoursInLastDay = Math.floor((NumberOfSeconds-NumberOfdays*86400)/3600);
-  NumberOfMinutesInLastHours = Math.floor(((NumberOfSeconds-NumberOfdays*86400)-NumberOfHoursInLastDay*3600)/60);
-  NumberOfSecondsInLastMinutes = NumberOfSeconds - NumberOfdays*24*60*60-NumberOfHoursInLastDay*60*60 - NumberOfMinutesInLastHours*60;
+  let NumberOfMiliSeconds = selectedTime.getTime()-currentTime.getTime();
+  let NumberOfSeconds = Math.floor(NumberOfMiliSeconds/1000)-secondsCounter;
+  let NumberOfdays = Math.floor(NumberOfSeconds/86400);
+  let NumberOfHoursInLastDay = Math.floor((NumberOfSeconds-NumberOfdays*86400)/3600);
+  let NumberOfMinutesInLastHours = Math.floor(((NumberOfSeconds-NumberOfdays*86400)-NumberOfHoursInLastDay*3600)/60);
+  let NumberOfSecondsInLastMinutes = NumberOfSeconds - NumberOfdays*24*60*60-NumberOfHoursInLastDay*60*60 - NumberOfMinutesInLastHours*60;
   daysCounterValue.textContent = addLeadingZero(NumberOfdays);
   hoursCounterValue.textContent  = addLeadingZero(NumberOfHoursInLastDay);
   minutesCounterValue.textContent = addLeadingZero(NumberOfMinutesInLastHours) ;
